@@ -79,6 +79,9 @@
 .ls-1{
     letter-spacing: 1px;
 }
+.ls-def{
+    letter-spacing: 0.02em;
+}
 
 // text
 .text-justify{
@@ -87,7 +90,7 @@
 
 // avatar
 .avatar{
-    @include box(30px);
+    @include box(30px!important);
     @include border-r-circle;
     overflow: hidden;
 
@@ -142,4 +145,12 @@
         margin-left: 8px!important;
         @extend %inline-block;
     }
+}
+
+
+// line
+.horz-line{
+    height: 1.6px;
+    width: 100%;
+    @include bg-color(black(0.2));
 }

@@ -31,3 +31,43 @@
         color: #ABABAB;
     }
 }
+
+.profile-form{
+    .form-block-title{
+        margin-bottom: 16px;
+        @include font-w("semi-bold");
+    }
+    .form-label{
+        margin-bottom: 8px!important;
+        @include font-s(map-get($font-size, "x-sm"));
+        @include breakpoint-down(md){
+            @include font-s(map-get($font-size, "xx-sm"));
+        }
+        @include breakpoint-down(xs){
+            @include font-s(map-get($font-size, "xxx-sm"));
+        }
+    }
+    .form-control{
+        margin-bottom: 14px!important;
+        height: 54px;
+        @include font-s(map-get($font-size, "x-sm"));
+        @include breakpoint-down(md){
+            @include font-s(map-get($font-size, "xx-sm"));
+            height: 50px;
+        }
+        @include breakpoint-down(xs){
+            @include font-s(map-get($font-size, "xxx-sm"));
+            height: 44px;
+        }
+    }
+    textarea.form-control{
+        height: 142px;
+    }
+    .submit-btn{
+        min-width: 216px;
+
+        @include breakpoint-down(xs){
+            width: 100%;
+        }
+    }
+}

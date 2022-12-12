@@ -30,6 +30,21 @@ $(document).ready(function(){
         }
     });
 
+    // profile image upload
+    $(".profile-img-btn").click(function(){
+        $("#profile-img-input").trigger('click');
+    })
+
+    $("#profile-img-input").change(event => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            $("#profile-img-view").attr('aria-label', file.name);
+            $("#profile-img-view").attr('src', reader.result);
+        }
+    });
+
     // change active tab 
     let navTabs = $('.sc-bookings .nav-tabs .nav-item');
     jQuery.each(navTabs, function(idx, navTab){

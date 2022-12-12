@@ -1,0 +1,131 @@
+.page-bookings{
+    #profile-img-input{
+        visibility: hidden;
+        height: 0;
+    }
+
+    .profile-img-btn{
+        box-shadow: 0.75px 3px 1.5px rgba(0, 0, 0, 0.01), 0.75px 1.5px 0.75px rgba(0, 0, 0, 0.05), 0px 0.75px 0.75px rgba(0, 0, 0, 0.09), 0px 0px 0.75px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+        @include border-radius(24px);
+        height: 44px;
+        @include flex-center;
+        @include px(12px);
+        width: 162px;
+        @include pos-absolute(null, null, -22px, 50%);
+        @include bg-color($clr-white);
+        transform: translateX(-50%);
+
+        &:active{
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        .icon{
+            width: 24px;
+        }
+    }
+}
+
+// booking details modal
+.booking-modal-top{
+    margin-top: 28px;
+}
+.booking-modal-title{
+    margin-top: 36px;
+    margin-bottom: 12px;
+}
+.booking-modal-body-r{
+    @include border($clr-jet, 1px, all, dashed);
+    @include border-radius(12px);
+    @include py(16px);
+    @include px(30px);
+}
+
+.booking-list-group{
+    .list-group-item{
+        @include grid;
+        @include cols-repeat(xl, 2);
+    }
+    .list-item-icon{
+        width: 22px;
+    }
+    .list-item-l{
+        @include grid;
+        @include grid-template-columns(30px auto);
+        margin-bottom: 4px;
+    }
+    .list-item-r{
+        margin-left: 30px;
+    }
+}
+
+.booking-modal-btns{
+    %modal-btn{
+        min-width: 110px;
+        height: 36px;
+        @include px(16px);
+        @include py(5px);
+        @include w-100;
+        @include flex-center;
+
+        .icon{
+            margin-right: 8px;
+            width: 20px;
+            display: none;
+
+            @include breakpoint-up(xl){
+                display: block;
+            }
+        }
+    }
+    .modal-upload-btn{
+        @extend %modal-btn;
+        @include bg-color($clr-jet!important);
+    }
+
+    .modal-download-btn{
+        @extend %modal-btn;
+        @include bg-color($clr-primary!important);
+    }
+}
+
+.booking-modal-bottom{
+    .btns-list-item{
+        @include px(16px);
+        @include py(8px);
+        @include flex-center;
+        @include w-100;
+        height: 48px;
+
+        .icon{
+            width: 24px!important;
+            margin-left: 12px;
+            display: none;
+        }
+
+        @include breakpoint-up(lg){
+            height: 60px;
+            .icon{
+                display: block;
+            }
+        }
+
+        @include breakpoint-up(xl){
+            height: 75px;
+        }
+
+        @include breakpoint-up(xxl){
+            height: 90px;
+        }
+    }
+
+    .bottom-cancel-btn{
+        @include bg-color($clr-red!important);
+    }
+    .bottom-postpone-btn{
+        @include bg-color($clr-jet);
+    }
+
+    .bottom-update-btn{
+        @include bg-color($clr-primary);
+    }
+}

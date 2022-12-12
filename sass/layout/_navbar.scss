@@ -43,6 +43,7 @@
     &-profile{
         @include breakpoint-down(lg){
             margin-left: 12px;
+            width: 80px;
         }
     }
 
