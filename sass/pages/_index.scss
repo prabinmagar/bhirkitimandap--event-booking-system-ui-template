@@ -1,0 +1,141 @@
+.page-index{
+    .sc-booking-selection{
+        margin-top: 80px;
+
+        @include breakpoint-down(md){
+            margin-top: 40px;
+        }
+
+        .booking-selection-content{
+            .booking-selection-item{
+                height: 58px;
+                @include border($clr-primary);
+
+                @include breakpoint-up(xs){
+                    height: 75px;
+                }
+
+                @include breakpoint-up(md){
+                    height: 95px;
+                }
+                
+                .input-group{
+                    .input-group-text{
+                        @include bg-transparent;
+                        @include border-none;
+                        img{
+                            width: 24px;
+
+                            @include breakpoint-up(md){
+                                width: 32px;
+                            }
+                        }
+                    }
+                    .form-control{
+                        @include border-none;
+                        @include font-s(map-get($font-size, "md"));
+                        @include input-placeholder{
+                            @include font-s(map-get($font-size, "md"));
+
+                            @include breakpoint-down(md){
+                                @include font-s(map-get($font-size, "sm"));
+                            }
+
+                            @include breakpoint-down(xs){
+                                @include font-s(map-get($font-size, "x-sm"));
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(1), &:nth-child(2){
+                    border-bottom: 0;
+                    @include breakpoint-up(md){
+                        @include px(33px);
+                    }
+                }
+
+                &:nth-child(3){
+                    @include border-none;
+                }
+
+                .book-now-btn{
+                    height: 100%;
+                    width: 100%;
+                    @include border-r-none;
+                    min-width: 322px;
+
+                    &:hover{
+                        @include bg-color($clr-primary!important);
+                        .btn-text{
+                            color: $clr-white;
+                        }
+                    }
+                }
+
+                @include breakpoint-up(lg){
+                    &:nth-child(1), &:nth-child(2){
+                        @include border($clr-primary);
+                    }
+
+                    &:nth-child(1), &:nth-child(2){
+                        border-right: none;
+                    }
+                }
+
+                @include breakpoint-up(lg){
+                    &:nth-child(1), &:nth-child(2){
+                        min-width: 300px;
+                    }
+                }
+
+                @include breakpoint-up(xl){
+                    &:nth-child(1), &:nth-child(2){
+                        min-width: 350px;
+                    }
+                }
+
+                @include breakpoint-up(xxl){
+                    &:nth-child(1), &:nth-child(2){
+                        min-width: 478px;
+                    }
+                }
+            }
+        }
+    }
+
+    .sc-avail{
+        margin-top: 88px;
+        @include breakpoint-down(md){
+            margin-top: 40px;
+        }
+
+        .sc-avail-content{
+            .avail-data{
+                margin-top: 42px;
+                .avail-text{
+                    @include font-s(map-get($font-size, "x-sm"));
+                    font-family: Urbanist;letter-spacing: 0.02em;
+
+                    @include breakpoint-down(md){
+                        @include font-s(map-get($font-size, "xx-sm"));
+                    }
+
+                    @include breakpoint-down(xs){
+                        @include font-s(map-get($font-size, "xxx-sm"));
+                    }
+
+                    &-lg{
+                        @include font-s(map-get($font-size, "md"));
+                        @include breakpoint-down(md){
+                            @include font-s(map-get($font-size, "sm"));
+                        }
+                        @include breakpoint-down(xs){
+                            @include font-s(map-get($font-size, "x-sm"));
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,145 @@
+// text colors
+.text-white{color: $clr-white;}
+.text-black{color: $clr-black; }
+.text-primary{color: $clr-primary!important;}
+.text-primary-v1{color: $clr-primary-v1!important;}
+.text-secondary{color: $clr-secondary!important;}
+.text-jet{color: $clr-jet;}
+.text-silver{color: $clr-roman-silver;}
+.text-charcoal{color: $clr-charcoal;}
+.text-green{color: $clr-green;}
+.text-red{color: $clr-red;}
+.text-tangerine{color: $clr-atomic-tangerine;}
+.text-color{color: $text-color;}
+.text-royal-blue{color: $clr-royal-blue;}
+
+// background
+.bg-black{background-color: $clr-black;}
+.bg-white{background-color: $clr-white;}
+.bg-primary{background-color: $clr-primary!important;}
+.bg-primary-v1{background-color: $clr-primary-v1!important;}
+.bg-secondary{background-color: $clr-secondary!important;}
+.bg-jet{background-color: $clr-jet;}
+.bg-silver{background-color: $clr-roman-silver;}
+.bg-charcoal{background-color: $clr-charcoal;}
+.bg-green{background-color: $clr-green;}
+.bg-red{background-color: $clr-red;}
+.bg-tangerine{background-color: $clr-atomic-tangerine;}
+
+// font family
+.font-urban{font-family: $font-family-urbanist;}
+
+// font weights
+.fw-1{@include font-w("thin");}
+.fw-2{@include font-w("extra-light");}
+.fw-3{@include font-w("light");}
+.fw-4{@include font-w("regular");}
+.fw-5{@include font-w("medium");}
+.fw-6{@include font-w("semi-bold");}
+.fw-7{@include font-w("bold");}
+.fw-8{@include font-w("extra-bold");}
+.fw-9{@include font-w("ultra-bold");}
+
+// font size
+.fs-xxx-sm{font-size: map-get($font-size, "xxx-sm");}
+.fs-xx-sm{font-size: map-get($font-size, "xx-sm");}
+.fs-x-sm{font-size: map-get($font-size, "x-sm");}
+.fs-sm{font-size: map-get($font-size, "sm");}
+.fs-base{font-size: map-get($font-size, "base");}
+.fs-md{font-size: map-get($font-size, "md");}
+.fs-lg{font-size: map-get($font-size, "lg");}
+.fs-x-lg{font-size: map-get($font-size, "x-lg");}
+.fs-xx-lg{font-size: map-get($font-size, "xx-lg");}
+
+// image cover
+.img-fit-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+// opacity
+.op-09{@include opacity(0.9);}
+.op-08{@include opacity(0.8);}
+.op-07{@include opacity(0.7);}
+.op-06{@include opacity(0.6);}
+.op-05{@include opacity(0.5);}
+.op-04{@include opacity(0.4);}
+.op-03{@include opacity(0.3);}
+.op-02{@include opacity(0.2);}
+.op-01{@include opacity(0.1);}
+
+// text no wrap 
+.no-wrap{
+    white-space: nowrap;
+}
+
+// letter spacing
+.ls-1{
+    letter-spacing: 1px;
+}
+
+// text
+.text-justify{
+    text-align: justify;
+}
+
+// avatar
+.avatar{
+    @include box(30px);
+    @include border-r-circle;
+    overflow: hidden;
+
+    img{
+        @include img-cover;
+    }
+
+    @include breakpoint-up(lg){
+        @include box(40px);
+    }
+
+    &:hover{
+        box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+    }
+}
+
+// page wrapper
+.page-wrapper{
+    overflow-x: hidden;
+}
+
+// status pills
+.status-pills{
+    display: flex!important;
+    @include align-items(center);
+    @include border-radius(20px);
+    @include p-all(8px);
+    &.status-pills-green{
+        @include border($clr-green);
+        .pills-dot{
+            @include bg-color($clr-green);
+        }
+        .pills-text{
+            color: $clr-green;
+        }
+    }
+
+    &.status-pills-red{
+        @include border($clr-red);
+        .pills-dot{
+            @include bg-color($clr-red);
+        }
+        .pills-text{
+            color: $clr-red;
+        }
+    }
+
+    .pills-dot{
+        @include circle(24px, 24px, $clr-green);
+    }
+    .pills-text{
+        margin-left: 8px!important;
+        @extend %inline-block;
+    }
+}

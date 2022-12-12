@@ -1,0 +1,36 @@
+.page-upload{
+    .sc-upload{
+        .upload-img{
+            img{
+                max-width: 360px;
+                @include push--auto;
+            }
+        }
+
+        .success-body{
+            @include p(50px, auto, 72px, auto);
+            @include border($clr-jet, 1.22px, all, dashed);
+            @include border-radius(12px);
+            max-width: 1046px;
+            @include push--auto;
+        }
+
+        .max-w-wrapper{
+            max-width: 899px;
+            @include push--auto;
+            margin-top: 48px;
+            @include breakpoint-down(md){
+                margin-top: 28px;
+            }
+        }
+
+        .submit-btn{
+            min-width: 141px;
+            margin-top: 60px;
+            @include breakpoint-down(md){
+                margin-top: 20px;
+                @include push--auto;
+            }
+        }
+    }
+}

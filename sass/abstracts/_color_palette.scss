@@ -1,0 +1,26 @@
+/* GLOBAL COLOR PALETTE */
+/* ==== Generic colors ==== */
+
+$clr-white: #fff;
+$clr-black: #000;
+$clr-royal-blue: #113167;
+$clr-jet: #3A3A3A;
+$clr-silver-chalice: #ababab;
+$clr-primary-blue: #1360E2;
+$clr-roman-silver: #8691A5;
+$clr-charcoal: #333C4A;
+$clr-slimy-green: #2E9B1C;
+$clr-fire-engine-red: #C62727;
+$clr-atomic-tangerine: #F8934F;
+$clr-spanish-gray: #8e8e8e;
+
+/* ==== Color Scheme ==== */
+$clr-primary: $clr-primary-blue;
+$clr-primary-v1: $clr-royal-blue;
+$clr-secondary: $clr-charcoal;
+$clr-green: $clr-slimy-green;
+$clr-red: $clr-fire-engine-red;
+$clr-gray: $clr-spanish-gray;
+
+// common colors
+$text-color: $clr-jet;

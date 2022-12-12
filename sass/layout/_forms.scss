@@ -1,0 +1,33 @@
+.form-label{
+    @include font-w("semi-bold");
+    @include font-s(map-get($font-size, "md"));
+
+    @include breakpoint-down(md){
+        @include font-s(map-get($font-size, "sm"));
+    }
+
+    @include breakpoint-down(xs){
+        @include font-s(map-get($font-size, "x-sm"));
+    }
+}
+
+.form-control{
+    @include border(#3a3a3a33, 2px);
+    @include border-radius(4px);
+    height: 60px;
+    @include font-s(map-get($font-size, "md"));
+
+    @include breakpoint-down(md){
+        @include font-s(map-get($font-size, "sm"));
+        height: 52px;
+    }
+
+    @include breakpoint-down(xs){
+        @include font-s(map-get($font-size, "x-sm"));
+    }
+
+    @include input-placeholder{
+        @include font-s(map-get($font-size, "x-sm"));
+        color: #ABABAB;
+    }
+}

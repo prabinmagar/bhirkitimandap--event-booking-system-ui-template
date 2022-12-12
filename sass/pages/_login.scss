@@ -1,0 +1,114 @@
+.page-login{
+    .sc-form{
+        min-height: calc(100vh - 88px);
+        overflow: hidden;
+        background: url($img-path + "/login-banner.png") center/cover no-repeat;
+
+        &::after{
+            @include pos-absolute(0, null, 0, 0);
+            width: 200px;
+            content: "";
+            @include bg-color($clr-white);
+
+            @include breakpoint-down(md){
+                width: 100%;
+            }
+
+        }
+        &-title{
+            h1{
+                @include font-s(40px);
+                line-height: 1.2;
+
+                @include breakpoint-down(md){
+                    @include font-s(map-get($font-size, "xx-lg"));
+                }
+
+                @include breakpoint-down(sm){
+                    @include font-s(map-get($font-size, "x-lg"));
+                }
+            }
+
+            p{
+                @include breakpoint-down(md){
+                    @include font-s(map-get($font-size, "x-lg"));
+                }
+
+                @include breakpoint-down(sm){
+                    @include font-s(map-get($font-size, "lg"));
+                }
+            }
+
+            & + p{
+                margin-top: 16px;
+            }
+        }
+
+        .col-left{
+            max-width: 680px;
+            z-index: $z-low;
+            height: 100%;
+            @include bg-color($clr-white);
+
+            @include breakpoint-up(lg){
+                padding-right: 80px!important;
+            }
+
+            form{
+                .password-element{
+                    @include pos-relative;
+                    .eye-icon{
+                        @include pos-absolute(50%, 30px, null, null);
+                        transform: translateY(50%);
+                        @include font-s(16px);
+                        cursor: pointer;
+                        @include transition-default;
+
+                        &:hover{
+                            color: $clr-primary;
+                        }
+                    }
+                }
+
+                .form-element{
+                    margin-bottom: 28px;
+
+                    @include breakpoint-down(md){
+                        margin-bottom: 34px;
+                    }
+
+                    &:first-child{
+                        margin-top: 43px;
+                        @include breakpoint-down(md){
+                            margin-top: 35px;
+                        }
+                    }
+    
+                    &:last-child{
+                        @include flush--bottom;
+                    }
+    
+                    .form-check-label{
+                        margin-left: 8px;
+                    }
+                }
+            }
+
+            .btn-primary{
+                width: 100%;
+                margin-top: 16px;
+                .btn-text{
+                    @include font-w('semi-bold');
+                }
+            }
+
+            .form-text{
+                margin-top: 16px;
+            }
+        }
+
+        .col-right{
+            @include pos-absolute(0, 0, 0, null);
+        }
+    }
+}

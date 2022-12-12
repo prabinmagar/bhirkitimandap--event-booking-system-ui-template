@@ -1,0 +1,198 @@
+$btn-borderRadius: 4px;
+$btn-default-bgColor: $clr-primary;
+$btn-default-bgColor--highlight: darken($clr-primary, 5%);
+$btn-default-color: $clr-white;
+$btn-default-color--highlight: darken($clr-white, 5%);
+$btn-default-borderColor: $clr-primary;
+
+%btn-default{
+    @extend %inline-flex;
+    @include align-items(center);
+    white-space: nowrap;
+    font-family: inherit;
+    cursor: pointer;
+    @include flush;
+    @include hard--bottom;
+    @include hard--top;
+    overflow: visible;
+    @include px(12px);
+    text-align: center;
+    user-select: none;
+    @include transition-default;
+}
+
+.btn{
+    @extend %btn-default;
+    height: 62px;
+    @include border-radius($btn-borderRadius!important);
+    @include flex-center;
+    @include border($btn-default-borderColor);
+    @include transition-default;
+
+    &,
+    &:link,
+    &:visited{
+        color: $btn-default-color;
+    }
+
+    &:hover,
+    &:active,
+    &:focus{
+        @include bg-color($btn-default-bgColor--highlight);
+        border-color: $btn-default-borderColor;
+    }
+
+    &:active,
+    &:focus{
+        outline: none;
+    }
+
+    &.disabled,
+    &[disabled]{
+        cursor: default;
+        background-image: none;
+        opacity: .5;
+    }
+
+
+    &-text{
+        @include font-w('medium');
+        @include transition-default;
+        @include font-s(map-get($font-size, "md"));
+
+        @include breakpoint-down(md){
+            @include font-s(map-get($font-size, "sm"));
+        }
+
+        @include breakpoint-down(xs){
+            @include font-s(map-get($font-size, "x-sm"));
+        }
+    }
+
+    @include breakpoint-down(md){
+        height: 52px;
+    }
+
+    &-sm{
+        height: 48px;
+        min-width: 111px;
+        @include px(12px);
+        @include border-radius(4px);
+
+        @include breakpoint-down(md){
+            height: 40px;
+            min-width: 90px;
+            .btn-text{
+                @include font-s(map-get($font-size, "sm"));
+            }
+        }
+
+        @include breakpoint-down(xs){
+            min-width: 70px;
+            @include px(6px);
+            .btn-text{
+                @include font-s(map-get($font-size, "x-sm"));
+            }
+        }
+    }
+}
+
+.btn{
+    &-primary{
+        @include bg-color($clr-primary!important);
+        color: $clr-white;
+        font-weight: 300!important;
+        @include transition-default;
+
+        &:hover{
+            @include bg-color($clr-primary-v1!important);
+            border-color: $clr-primary-v1;
+        }
+
+        &-sm{
+            @extend .btn-primary;
+            height: 56px;
+        }
+    }
+
+    &-primary-v1{
+        @include bg-color($clr-primary-v1!important);
+    }
+
+    &-charcoal{
+        @include bg-color($clr-charcoal!important);
+    }
+
+    &-white{
+        @include bg-color($clr-white);
+        color: $text-color;
+
+        &:hover{
+            color: lighten($text-color, 15%);
+        }
+    }
+
+    &-green{
+        @include bg-color($clr-green!important);
+        height: 60px;
+        min-width: 154px;
+        border-color: $clr-green!important;
+
+        &,
+        &:link,
+        &:visited{
+            color: $clr-white;
+        }
+
+        &:hover,
+        &:active,
+        &:focus{
+            @include bg-color(darken($clr-green, 5%)!important);
+            border-color: $clr-green!important;
+        }
+
+        &-sm{
+            @extend .btn-green;
+            height: 56px;
+        }
+    }
+
+    &-silver{
+        @include bg-color($clr-silver-chalice);
+        color: $clr-white;
+        height: 60px;
+        min-width: 154px;
+        border-color: $clr-silver-chalice!important;
+
+        &:hover,
+        &:active,
+        &:focus{
+            @include bg-color(darken($clr-silver-chalice, 5%)!important);
+            border-color: $clr-silver-chalice!important;
+        }
+    }
+
+    &-outline-primary{
+        .btn-text{
+            color: $clr-primary!important;
+        }
+
+        &:hover{
+            @include bg-color($clr-white);
+            border-color: darken($clr-primary, 10%);
+            .btn-text{
+                color: darken($clr-primary, 10%);
+            }
+        }
+
+        &-sm{
+            @extend .btn-outline-primary;
+            height: 56px;
+        }
+    }
+}
+
+
+.btns{
+    
+}

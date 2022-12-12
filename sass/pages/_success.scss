@@ -1,0 +1,19 @@
+.page-success{
+    .success-img{
+        max-width: 480px;
+        @include push--auto;
+    }
+    .success-text{
+        max-width: 555px;
+        @include push--auto;
+    }
+    .btns{
+        margin-top: 52px!important;
+
+        .btn{
+            @include breakpoint-up(md){
+                min-width: 232px;
+            }
+        }
+    }
+}

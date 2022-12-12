@@ -1,0 +1,68 @@
+.avail-data{
+    @include breakpoint-down(lg){
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar{
+            height: 6px;
+            &-track{
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                @include border-radius(6px);
+            }
+            &-thumb{
+                background-color: $clr-silver-chalice;
+                @include border-radius(6px);
+            }
+        }
+    }
+    .table{
+        @include breakpoint-down(lg){
+            width: 1200px;
+        }
+
+        thead{
+            text-align: center;
+            height: 75px;
+            vertical-align: middle;
+
+            @include breakpoint-down(xs){
+                height: 58px;
+            }
+
+            th{
+                @include border($clr-primary);
+                &:nth-child(1){
+                    @include px(48px);
+                }
+            }
+        }
+
+        tbody{
+            td{
+                @include py(10px);
+                @include px(20px);
+                vertical-align: middle;
+                text-align: center;
+
+                @include breakpoint-down(md){
+                    @include px(16px);
+                }
+
+                @include breakpoint-down(xs){
+                    @include py(6px);
+                    @include px(10px);
+                }
+
+                @include border($clr-primary);
+                &:nth-child(1){
+                    @include px(48px);
+                }
+
+                .btn{
+                    @include breakpoint-down(xs){
+                        height: 48px;
+                    }
+                }
+            }
+        }
+    }
+}

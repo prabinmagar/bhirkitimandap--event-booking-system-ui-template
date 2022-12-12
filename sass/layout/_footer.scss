@@ -1,0 +1,4 @@
+.text-copyright{
+    color: #969696;
+    @include font-s(map-get($font-size, "x-sm"));
+}

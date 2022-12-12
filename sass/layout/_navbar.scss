@@ -1,0 +1,61 @@
+.page-navbar{
+    height: 88px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    @include pos-relative;
+
+    &-brand{
+        max-width: 151px;
+        width: 151px;
+        img{
+            width: 151px;
+            max-width: 151px;
+        }
+    }
+
+    .brand-and-toggler{
+        @include breakpoint-down(lg){
+            @include w-100;
+        }
+    }
+
+
+    &-collapse{
+        .page-nav-item{
+            @include px(12px);
+
+            .page-nav-link{
+                &:hover{
+                    @include opacity(0.8);
+                }
+            }
+        }
+    }
+
+    &-toggler{
+        width: 25px;
+        @include opacity(0.4);
+
+        &:hover{
+            @include opacity(0.6);
+        }
+    }
+
+    &-profile{
+        @include breakpoint-down(lg){
+            margin-left: 12px;
+        }
+    }
+
+    // &-content{
+    //     @include breakpoint-down(lg){
+    //         @include flex-direction(column);
+    //     }
+    // }
+
+    // &-btns{
+    //     @include breakpoint-down(lg){
+    //         margin-left: auto;
+    //     }
+    // }
+    
+}
